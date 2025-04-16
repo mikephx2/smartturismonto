@@ -1,0 +1,2244 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" href="resources/primer.css" media="screen"/>
+<link rel="stylesheet" href="resources/rec.css" media="screen"/>
+<link rel="stylesheet" href="resources/extra.css" media="screen"/>
+<link rel="stylesheet" href="resources/owl.css" media="screen"/>
+<link rel="stylesheet" href="resources/dark.css" media="(prefers-color-scheme: dark)"/>
+<link rel="stylesheet" href="resources/light.css" media="(prefers-color-scheme: light)"/>
+<link rel="stylesheet" href="resources/slider.css" media="screen"/>
+<meta name="color-scheme" content="dark light">
+<script type="module" src="resources/dark-mode-toggle.mjs"></script><div class="darkmode">
+	<dark-mode-toggle class="slider"></dark-mode-toggle>
+</div>
+ <title>SmartTourismOnto</title>
+
+
+<!-- SCHEMA.ORG METADATA -->
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","url":"http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3","image":"http://vowl.visualdataweb.org/webvowl/#iri=http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3","name":"SmartTourismOnto", "headline":"Document describing the ontology http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3", "dateReleased":"2025-04-16", "author":[{"@type":"Person","name":"Michael Bueno Navarro"}]}</script>
+
+<script src="resources/jquery.js"></script> 
+<script src="resources/marked.min.js"></script> 
+    <script> 
+function loadHash() {
+  jQuery(".markdown").each(function(el){jQuery(this).after(marked.parse(jQuery(this).text())).remove()});
+	var hash = location.hash;
+	if($(hash).offset()!=null){
+	  $('html, body').animate({scrollTop: $(hash).offset().top}, 0);
+}
+	loadTOC();
+}
+function loadTOC(){
+	//process toc dynamically
+	  var t='<h2>Table of contents</h2><ul>';i = 1;j=0;
+	  jQuery(".list").each(function(){
+		if(jQuery(this).is('h2')){
+			if(j>0){
+				t+='</ul>';
+				j=0;
+			}
+			t+= '<li>'+i+'. <a href=#'+ jQuery(this).attr('id')+'>'+ jQuery(this).ignore("span").text()+'</a></li>';
+			i++;
+		}
+		if(jQuery(this).is('h3')){
+			if(j==0){
+				t+='<ul>';
+			}
+			j++;
+			t+= '<li>'+(i-1)+'.'+j+'. '+'<a href=#'+ jQuery(this).attr('id')+'>'+ jQuery(this).ignore("span").text()+'</a></li>';
+		}
+	  });
+	  t+='</ul>';
+	  $("#toc").html(t); 
+}
+$(function(){
+    loadHash();
+}); $.fn.ignore = function(sel){
+        return this.clone().find(sel||">*").remove().end();
+ }; 
+   </script> 
+  </head> 
+
+<body>
+<div class="container">
+<div class="head">
+<div style="float:right">language <a href="index-en.html"><b>en</b></a> <a href="index-es.html"><b>es</b></a> </div>
+<h1>SmartTourismOnto</h1>
+<h2>Release: 2025-04-16</h2>
+
+
+<dl>
+<dt>Latest version:</dt>
+<dd><a href="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3">http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3</a></dd>
+<dt>Authors:</dt>
+<dd>Michael Bueno Navarro<a href="mailto:mikephx@uoc.edu">&#9993;</a></dd>
+
+<dt>Download serialization:</dt><dd><span><a href="ontology.jsonld" target="_blank"><img src="https://img.shields.io/badge/Format-JSON_LD-blue.svg" alt="JSON-LD" /></a> </span><span><a href="ontology.owl" target="_blank"><img src="https://img.shields.io/badge/Format-RDF/XML-blue.svg" alt="RDF/XML" /></a> </span><span><a href="ontology.nt" target="_blank"><img src="https://img.shields.io/badge/Format-N_Triples-blue.svg" alt="N-Triples" /></a> </span><span><a href="ontology.ttl" target="_blank"><img src="https://img.shields.io/badge/Format-TTL-blue.svg" alt="TTL" /></a> </span></dd><dt>License:</dt><dd><a href="http://insertlicenseURIhere.example.org" target="_blank"><img src="https://img.shields.io/badge/License-license%20name%20goes%20here-blue.svg" alt="http://insertlicenseURIhere.example.org" /></a>
+</dd><dt>Visualization:</dt><dd><a href="webvowl/index.html#" target="_blank"><img src="https://img.shields.io/badge/Visualize_with-WebVowl-blue.svg" alt="Visualize with WebVowl" /></a></dd>
+<dt>Evaluation:</dt><dd><a href="OOPSevaluation/oopsEval.html#" target="_blank"><img src="https://img.shields.io/badge/Evaluate_with-OOPS! (OntOlogy Pitfall Scanner!)-blue.svg" alt="Evaluate with OOPS!" /></a></dd></dl>
+
+<hr/>
+</div>
+<div class="status">
+<div>
+<span>Ontology Specification Draft</span>
+</div>
+</div>     <div id="abstract"><h2>Abstract</h2><span class="markdown">
+This is a placeholder text for the abstract. The abstract should contain a couple of sentences summarizing the ontology and its purpose.</span>
+</div>
+<div id="toc"></div> 
+
+<!--INTRODUCTION SECTION-->
+    <div id="introduction"><h2 id="intro" class="list">Introduction <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<span class="markdown">
+This is a place holder text for the introduction. The introduction should briefly describe the ontology, its motivation, state of the art and goals.</span>
+<div id="namespacedeclarations">
+<h3 id="ns" class="list">Namespace declarations</h3>
+<div id="ns" align="center">
+<table>
+<caption> <a href="#ns"> Table 1</a>: Namespaces used in the document </caption>
+<tbody>
+<tr><td><b>[Ontology NS Prefix]</b></td><td>&lt;http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#&gt;</td></tr>
+<tr><td><b>ns2</b></td><td>&lt;http://swrl.stanford.edu/ontologies/3.3/swrla.owl#&gt;</td></tr>
+<tr><td><b>owl</b></td><td>&lt;http://www.w3.org/2002/07/owl#&gt;</td></tr>
+<tr><td><b>rdf</b></td><td>&lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;</td></tr>
+<tr><td><b>rdfs</b></td><td>&lt;http://www.w3.org/2000/01/rdf-schema#&gt;</td></tr>
+<tr><td><b>resource</b></td><td>&lt;http://dbpedia.org/resource/&gt;</td></tr>
+<tr><td><b>swrl</b></td><td>&lt;http://www.w3.org/2003/11/swrl#&gt;</td></tr>
+<tr><td><b>swrlb</b></td><td>&lt;http://www.w3.org/2003/11/swrlb#&gt;</td></tr>
+<tr><td><b>tour</b></td><td>&lt;http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3&gt;</td></tr>
+<tr><td><b>xml</b></td><td>&lt;http://www.w3.org/XML/1998/namespace&gt;</td></tr>
+<tr><td><b>xsd</b></td><td>&lt;http://www.w3.org/2001/XMLSchema#&gt;</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+  
+
+<!--OVERVIEW SECTION-->
+    <div id="overview"><h2 id="overv" class="list">SmartTourismOnto: Overview <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<span class="markdown">
+This ontology has the following classes and properties.</span>
+<h4>Classes</h4>
+<ul xmlns:widoco="https://w3id.org/widoco/vocab#"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    class="hlist">
+   <li>
+      <a href="#Accommodation"
+         title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Accommodation">Accommodation</a>
+   </li>
+   <li>
+      <a href="#http://www.w3.org/2003/11/swrl#AtomList" title="http://www.w3.org/2003/11/swrl#AtomList">
+         <span>Atom List</span>
+      </a>
+   </li>
+   <li>
+      <a href="#Attraction"
+         title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Attraction">Attraction</a>
+   </li>
+   <li>
+      <a href="#Bar"
+         title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Bar">Bar</a>
+   </li>
+   <li>
+      <a href="#http://www.w3.org/2003/11/swrl#BuiltinAtom" title="http://www.w3.org/2003/11/swrl#BuiltinAtom">
+         <span>Builtin Atom</span>
+      </a>
+   </li>
+   <li>
+      <a href="#BusService"
+         title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#BusService">BusService</a>
+   </li>
+   <li>
+      <a href="#City"
+         title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#City">City</a>
+   </li>
+   <li>
+      <a href="#http://www.w3.org/2003/11/swrl#ClassAtom" title="http://www.w3.org/2003/11/swrl#ClassAtom">
+         <span>Class Atom</span>
+      </a>
+   </li>
+   <li>
+      <a href="#CulturalActivity"
+         title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#CulturalActivity">CulturalActivity</a>
+   </li>
+   <li>
+      <a href="#CulturalEvent"
+         title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#CulturalEvent">CulturalEvent</a>
+   </li>
+   <li>
+      <a href="#http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"
+         title="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom">
+         <span>Datavalued Property Atom</span>
+      </a>
+   </li>
+   <li>
+      <a href="#Event"
+         title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Event">Event</a>
+   </li>
+   <li>
+      <a href="#FoodEstablishment"
+         title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#FoodEstablishment">FoodEstablishment</a>
+   </li>
+   <li>
+      <a href="#Hotel"
+         title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Hotel">Hotel</a>
+   </li>
+   <li>
+      <a href="#http://www.w3.org/2003/11/swrl#Imp" title="http://www.w3.org/2003/11/swrl#Imp">
+         <span>Imp</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"
+         title="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom">
+         <span>Individual Property Atom</span>
+      </a>
+   </li>
+   <li>
+      <a href="#MetroService"
+         title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#MetroService">MetroService</a>
+   </li>
+   <li>
+      <a href="#Monument"
+         title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Monument">Monument</a>
+   </li>
+   <li>
+      <a href="#Museum"
+         title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Museum">Museum</a>
+   </li>
+   <li>
+      <a href="#Park"
+         title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Park">Park</a>
+   </li>
+   <li>
+      <a href="#Place"
+         title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Place">Place</a>
+   </li>
+   <li>
+      <a href="#Restaurant"
+         title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Restaurant">Restaurant</a>
+   </li>
+   <li>
+      <a href="#SportsEvent"
+         title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#SportsEvent">SportsEvent</a>
+   </li>
+   <li>
+      <a href="#TaxiService"
+         title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#TaxiService">TaxiService</a>
+   </li>
+   <li>
+      <a href="#TransportService"
+         title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#TransportService">TransportService</a>
+   </li>
+   <li>
+      <a href="#http://www.w3.org/2003/11/swrl#Variable" title="http://www.w3.org/2003/11/swrl#Variable">
+         <span>Variable</span>
+      </a>
+   </li>
+</ul><h4>Object Properties</h4><ul xmlns:widoco="https://w3id.org/widoco/vocab#"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    class="hlist">
+   <li>
+      <a href="#availableIn"
+         title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#availableIn">availableIn</a>
+   </li>
+   <li>
+      <a href="#hasPlace"
+         title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#hasPlace">
+         <span>has Place</span>
+      </a>
+   </li>
+   <li>
+      <a href="#hasAttraction"
+         title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#hasAttraction">hasAttraction</a>
+   </li>
+   <li>
+      <a href="#hasEvent"
+         title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#hasEvent">hasEvent</a>
+   </li>
+   <li>
+      <a href="#hasHotel"
+         title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#hasHotel">hasHotel</a>
+   </li>
+   <li>
+      <a href="#hasRestaurant"
+         title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#hasRestaurant">hasRestaurant</a>
+   </li>
+   <li>
+      <a href="#isAttractionOf"
+         title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#isAttractionOf">
+         <span>is Attraction Of</span>
+      </a>
+   </li>
+   <li>
+      <a href="#isEventOf"
+         title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#isEventOf">
+         <span>is Event Of</span>
+      </a>
+   </li>
+   <li>
+      <a href="#isHotelOf"
+         title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#isHotelOf">
+         <span>is Hotel Of</span>
+      </a>
+   </li>
+   <li>
+      <a href="#isRestaurantOf"
+         title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#isRestaurantOf">
+         <span>is Restaurant Of</span>
+      </a>
+   </li>
+   <li>
+      <a href="#isLocatedIn"
+         title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#isLocatedIn">isLocatedIn</a>
+   </li>
+   <li>
+      <a href="#offersTransport"
+         title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#offersTransport">
+         <span>offers Transport</span>
+      </a>
+   </li>
+</ul><h4>Data Properties</h4><ul xmlns:widoco="https://w3id.org/widoco/vocab#"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    class="hlist">
+   <li>
+      <a href="#hasCoordinates"
+         title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#hasCoordinates">hasCoordinates</a>
+   </li>
+   <li>
+      <a href="#hasCuisine"
+         title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#hasCuisine">hasCuisine</a>
+   </li>
+   <li>
+      <a href="#hasDate"
+         title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#hasDate">hasDate</a>
+   </li>
+   <li>
+      <a href="#hasEventType"
+         title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#hasEventType">hasEventType</a>
+   </li>
+   <li>
+      <a href="#hasPrice"
+         title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#hasPrice">hasPrice</a>
+   </li>
+   <li>
+      <a href="#hasRating"
+         title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#hasRating">hasRating</a>
+   </li>
+   <li>
+      <a href="#hasStars"
+         title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#hasStars">hasStars</a>
+   </li>
+   <li>
+      <a href="#hasTransportType"
+         title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#hasTransportType">hasTransportType</a>
+   </li>
+</ul><h4>Annotation Properties</h4><ul xmlns:widoco="https://w3id.org/widoco/vocab#"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    class="hlist">
+   <li>
+      <a href="#http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled"
+         title="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled">
+         <span>is Rule Enabled</span>
+      </a>
+   </li>
+</ul><h4>Named Individuals</h4><ul xmlns:widoco="https://w3id.org/widoco/vocab#"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    class="hlist">
+   <li>
+      <a href="#Autobús_City_Zaragoza"
+         title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Autobús_City_Zaragoza">Autobús - City Zaragoza</a>
+   </li>
+   <li>
+      <a href="#Barcelona"
+         title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Barcelona">Barcelona</a>
+   </li>
+   <li>
+      <a href="#Carnaval_Cádiz"
+         title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Carnaval_Cádiz">Carnaval Cádiz</a>
+   </li>
+   <li>
+      <a href="#Carnaval_Sevilla"
+         title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Carnaval_Sevilla">Carnaval Sevilla</a>
+   </li>
+   <li>
+      <a href="#Castillo_Cádiz"
+         title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Castillo_Cádiz">Castillo Cádiz</a>
+   </li>
+   <li>
+      <a href="#Castillo_Sevilla"
+         title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Castillo_Sevilla">Castillo Sevilla</a>
+   </li>
+   <li>
+      <a href="#Castillo_Zaragoza"
+         title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Castillo_Zaragoza">Castillo Zaragoza</a>
+   </li>
+   <li>
+      <a href="#Congreso_Bilbao"
+         title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Congreso_Bilbao">Congreso Bilbao</a>
+   </li>
+   <li>
+      <a href="#Congreso_Cádiz"
+         title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Congreso_Cádiz">Congreso Cádiz</a>
+   </li>
+   <li>
+      <a href="#Feria_Toledo"
+         title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Feria_Toledo">Feria Toledo</a>
+   </li>
+   <li>
+      <a href="#http://dbpedia.org/resource/Flamenco" title="http://dbpedia.org/resource/Flamenco">
+         <span>Flamenco</span>
+      </a>
+   </li>
+   <li>
+      <a href="#Hotel_Palace_Zaragoza"
+         title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Hotel_Palace_Zaragoza">Hotel Palace Zaragoza</a>
+   </li>
+   <li>
+      <a href="#Hotel_Royal_Bilbao"
+         title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Hotel_Royal_Bilbao">Hotel Royal Bilbao</a>
+   </li>
+   <li>
+      <a href="#Hotel_Royal_Málaga"
+         title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Hotel_Royal_Málaga">Hotel Royal Málaga</a>
+   </li>
+   <li>
+      <a href="#Hotel_Royal_Pamplona"
+         title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Hotel_Royal_Pamplona">Hotel Royal Pamplona</a>
+   </li>
+   <li>
+      <a href="#Hotel_Vista_Sevilla"
+         title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Hotel_Vista_Sevilla">Hotel Vista Sevilla</a>
+   </li>
+   <li>
+      <a href="#Madrid"
+         title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Madrid">Madrid</a>
+   </li>
+   <li>
+      <a href="#Metro_Movi_Cádiz"
+         title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Metro_Movi_Cádiz">Metro - Movi Cádiz</a>
+   </li>
+   <li>
+      <a href="#Metro_Urban_Madrid"
+         title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Metro_Urban_Madrid">Metro - Urban Madrid</a>
+   </li>
+   <li>
+      <a href="#Museo_Madrid"
+         title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Museo_Madrid">Museo Madrid</a>
+   </li>
+   <li>
+      <a href="#Restaurante_Delicia_Málaga"
+         title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Restaurante_Delicia_Málaga">Restaurante Delicia Málaga</a>
+   </li>
+   <li>
+      <a href="#Restaurante_Delicia_Pamplona"
+         title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Restaurante_Delicia_Pamplona">Restaurante Delicia Pamplona</a>
+   </li>
+   <li>
+      <a href="#Restaurante_Fusión_Valencia"
+         title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Restaurante_Fusión_Valencia">Restaurante Fusión Valencia</a>
+   </li>
+   <li>
+      <a href="#Restaurante_Gourmet_Madrid"
+         title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Restaurante_Gourmet_Madrid">Restaurante Gourmet Madrid</a>
+   </li>
+   <li>
+      <a href="#Restaurante_Tradición_Toledo"
+         title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Restaurante_Tradición_Toledo">Restaurante Tradición Toledo</a>
+   </li>
+   <li>
+      <a href="#http://dbpedia.org/resource/Seville" title="http://dbpedia.org/resource/Seville">
+         <span>Seville</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://dbpedia.org/resource/Seville_Cathedral" title="http://dbpedia.org/resource/Seville_Cathedral">
+         <span>Seville Cathedral</span>
+      </a>
+   </li>
+   <li>
+      <a href="#Taxi_Trans_Bilbao"
+         title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Taxi_Trans_Bilbao">Taxi - Trans Bilbao</a>
+   </li>
+   <li>
+      <a href="#Toledo"
+         title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Toledo">Toledo</a>
+   </li>
+   <li>
+      <a href="#Tranvía_Trans_Toledo"
+         title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Tranvía_Trans_Toledo">Tranvía - Trans Toledo</a>
+   </li>
+   <li>
+      <a href="#Valencia"
+         title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Valencia">Valencia</a>
+   </li>
+   <li>
+      <a href="#Zaragoza"
+         title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Zaragoza">Zaragoza</a>
+   </li>
+</ul><h4> SWRL Rules </h4><ul xmlns:widoco="https://w3id.org/widoco/vocab#"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    class="hlist">
+   <li>
+      <a href="#d4e1859">CheapRestaurantRule</a>
+   </li>
+   <li>
+      <a href="#d4e1738">CulturalEventInFutureRule</a>
+   </li>
+   <li>
+      <a href="#d4e1535">HighRatedMuseumRule</a>
+   </li>
+   <li>
+      <a href="#d4e2165">HighScoreHotelRule</a>
+   </li>
+   <li>
+      <a href="#d4e1152">HotelInCityRule</a>
+   </li>
+   <li>
+      <a href="#d4e1333">NotableAttractionRule</a>
+   </li>
+   <li>
+      <a href="#d4e1980">RatedRestaurantNearAttraction</a>
+   </li>
+   <li>
+      <a href="#d4e1454">SpanishCuisineRule</a>
+   </li>
+   <li>
+      <a href="#d4e1252">SportsEventRule</a>
+   </li>
+   <li>
+      <a href="#d4e1657">UrbanTransportRule</a>
+   </li>
+</ul><iframe src="webvowl/index.html"></iframe> 
+</div>
+  
+
+<!--DESCRIPTION SECTION-->
+    <div id="description"><h2 id="desc" class="list">SmartTourismOnto: Description <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+
+<span class="markdown">Ontology for integrating and recommending tourist information in Spanish cities.</span></div>
+   
+
+<!--CROSSREF SECTION-->
+   <div id="crossref"><h2 id="crossreference" class="list">Cross-reference for SmartTourismOnto classes, object properties and data properties <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+This section provides details for each class and property defined by SmartTourismOnto.
+<div xmlns:widoco="https://w3id.org/widoco/vocab#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="classes">
+ <h3 id="classes-headline" class="list">Classes</h3>
+ <ul class="hlist">
+  <li><a href="#Accommodation" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Accommodation">Accommodation</a></li>
+  <li><a href="#http://www.w3.org/2003/11/swrl#AtomList" title="http://www.w3.org/2003/11/swrl#AtomList"> <span>Atom List</span> </a></li>
+  <li><a href="#Attraction" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Attraction">Attraction</a></li>
+  <li><a href="#Bar" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Bar">Bar</a></li>
+  <li><a href="#http://www.w3.org/2003/11/swrl#BuiltinAtom" title="http://www.w3.org/2003/11/swrl#BuiltinAtom"> <span>Builtin Atom</span> </a></li>
+  <li><a href="#BusService" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#BusService">BusService</a></li>
+  <li><a href="#City" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#City">City</a></li>
+  <li><a href="#http://www.w3.org/2003/11/swrl#ClassAtom" title="http://www.w3.org/2003/11/swrl#ClassAtom"> <span>Class Atom</span> </a></li>
+  <li><a href="#CulturalActivity" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#CulturalActivity">CulturalActivity</a></li>
+  <li><a href="#CulturalEvent" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#CulturalEvent">CulturalEvent</a></li>
+  <li><a href="#http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom" title="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"> <span>Datavalued Property Atom</span> </a></li>
+  <li><a href="#Event" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Event">Event</a></li>
+  <li><a href="#FoodEstablishment" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#FoodEstablishment">FoodEstablishment</a></li>
+  <li><a href="#Hotel" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Hotel">Hotel</a></li>
+  <li><a href="#http://www.w3.org/2003/11/swrl#Imp" title="http://www.w3.org/2003/11/swrl#Imp"> <span>Imp</span> </a></li>
+  <li><a href="#http://www.w3.org/2003/11/swrl#IndividualPropertyAtom" title="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"> <span>Individual Property Atom</span> </a></li>
+  <li><a href="#MetroService" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#MetroService">MetroService</a></li>
+  <li><a href="#Monument" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Monument">Monument</a></li>
+  <li><a href="#Museum" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Museum">Museum</a></li>
+  <li><a href="#Park" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Park">Park</a></li>
+  <li><a href="#Place" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Place">Place</a></li>
+  <li><a href="#Restaurant" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Restaurant">Restaurant</a></li>
+  <li><a href="#SportsEvent" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#SportsEvent">SportsEvent</a></li>
+  <li><a href="#TaxiService" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#TaxiService">TaxiService</a></li>
+  <li><a href="#TransportService" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#TransportService">TransportService</a></li>
+  <li><a href="#http://www.w3.org/2003/11/swrl#Variable" title="http://www.w3.org/2003/11/swrl#Variable"> <span>Variable</span> </a></li>
+ </ul>
+ <div class="entity" id="Accommodation">
+  <h3>Accommodation<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Accommodation</p>
+  <div class="comment">
+   <span class="markdown">Accommodation class.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#Place" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Place">Place</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has sub-classes
+   </dt>
+   <dd>
+    <a href="#Hotel" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Hotel">Hotel</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is disjoint with
+   </dt>
+   <dd>
+    <a href="#City" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#City">City</a> <sup class="type-c" title="class">c</sup>, <a href="#CulturalActivity" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#CulturalActivity">CulturalActivity</a> <sup class="type-c" title="class">c</sup>, <a href="#FoodEstablishment" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#FoodEstablishment">FoodEstablishment</a> <sup class="type-c" title="class">c</sup>, <a href="#TransportService" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#TransportService">TransportService</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://www.w3.org/2003/11/swrl#AtomList">
+  <h3>Atom List<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.w3.org/2003/11/swrl#AtomList</p>
+  <div class="comment">
+   <span class="markdown">Used in SWRL rule definitions to support logical inference</span>
+  </div>
+ </div>
+ <div class="entity" id="Attraction">
+  <h3>Attraction<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Attraction</p>
+  <div class="comment">
+   <span class="markdown">Attraction class.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#CulturalActivity" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#CulturalActivity">CulturalActivity</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has sub-classes
+   </dt>
+   <dd>
+    <a href="#Monument" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Monument">Monument</a> <sup class="type-c" title="class">c</sup>, <a href="#Museum" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Museum">Museum</a> <sup class="type-c" title="class">c</sup>, <a href="#Park" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Park">Park</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#isAttractionOf" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#isAttractionOf">is Attraction Of</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#hasAttraction" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#hasAttraction">hasAttraction</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    has members
+   </dt>
+   <dd>
+    <a href="#Castillo_Cádiz" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Castillo_Cádiz">Castillo Cádiz</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Bar">
+  <h3>Bar<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Bar</p>
+  <div class="comment">
+   <span class="markdown">Bar class.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#FoodEstablishment" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#FoodEstablishment">FoodEstablishment</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://www.w3.org/2003/11/swrl#BuiltinAtom">
+  <h3>Builtin Atom<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.w3.org/2003/11/swrl#BuiltinAtom</p>
+  <div class="comment">
+   <span class="markdown">Used in SWRL rule definitions to support logical inference</span>
+  </div>
+ </div>
+ <div class="entity" id="BusService">
+  <h3>BusService<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#BusService</p>
+  <div class="comment">
+   <span class="markdown">BusService class.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#TransportService" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#TransportService">TransportService</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has members
+   </dt>
+   <dd>
+    <a href="#Autobús_City_Zaragoza" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Autobús_City_Zaragoza">Autobús - City Zaragoza</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="City">
+  <h3>City<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#City</p>
+  <div class="comment">
+   <span class="markdown">City class.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#Place" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Place">Place</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#hasAttraction" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#hasAttraction">hasAttraction</a> <sup class="type-op" title="object property">op</sup>, <a href="#hasCoordinates" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#hasCoordinates">hasCoordinates</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#hasEvent" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#hasEvent">hasEvent</a> <sup class="type-op" title="object property">op</sup>, <a href="#hasHotel" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#hasHotel">hasHotel</a> <sup class="type-op" title="object property">op</sup>, <a href="#hasRestaurant" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#hasRestaurant">hasRestaurant</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#availableIn" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#availableIn">availableIn</a> <sup class="type-op" title="object property">op</sup>, <a href="#hasPlace" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#hasPlace">has Place</a> <sup class="type-op" title="object property">op</sup>, <a href="#isAttractionOf" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#isAttractionOf">is Attraction Of</a> <sup class="type-op" title="object property">op</sup>, <a href="#isEventOf" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#isEventOf">is Event Of</a> <sup class="type-op" title="object property">op</sup>, <a href="#isHotelOf" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#isHotelOf">is Hotel Of</a> <sup class="type-op" title="object property">op</sup>, <a href="#isRestaurantOf" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#isRestaurantOf">is Restaurant Of</a> <sup class="type-op" title="object property">op</sup>, <a href="#isLocatedIn" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#isLocatedIn">isLocatedIn</a> <sup class="type-op" title="object property">op</sup>, <a href="#offersTransport" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#offersTransport">offers Transport</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    has members
+   </dt>
+   <dd>
+    <a href="#Barcelona" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Barcelona">Barcelona</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#Madrid" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Madrid">Madrid</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#Toledo" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Toledo">Toledo</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#Valencia" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Valencia">Valencia</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#Zaragoza" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Zaragoza">Zaragoza</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+   <dt>
+    is disjoint with
+   </dt>
+   <dd>
+    <a href="#Accommodation" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Accommodation">Accommodation</a> <sup class="type-c" title="class">c</sup>, <a href="#CulturalActivity" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#CulturalActivity">CulturalActivity</a> <sup class="type-c" title="class">c</sup>, <a href="#FoodEstablishment" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#FoodEstablishment">FoodEstablishment</a> <sup class="type-c" title="class">c</sup>, <a href="#TransportService" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#TransportService">TransportService</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://www.w3.org/2003/11/swrl#ClassAtom">
+  <h3>Class Atom<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.w3.org/2003/11/swrl#ClassAtom</p>
+  <div class="comment">
+   <span class="markdown">Used in SWRL rule definitions to support logical inference</span>
+  </div>
+ </div>
+ <div class="entity" id="CulturalActivity">
+  <h3>CulturalActivity<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#CulturalActivity</p>
+  <div class="comment">
+   <span class="markdown">CulturalActivity class.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#Place" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Place">Place</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has sub-classes
+   </dt>
+   <dd>
+    <a href="#Attraction" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Attraction">Attraction</a> <sup class="type-c" title="class">c</sup>, <a href="#Event" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Event">Event</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is disjoint with
+   </dt>
+   <dd>
+    <a href="#Accommodation" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Accommodation">Accommodation</a> <sup class="type-c" title="class">c</sup>, <a href="#City" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#City">City</a> <sup class="type-c" title="class">c</sup>, <a href="#FoodEstablishment" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#FoodEstablishment">FoodEstablishment</a> <sup class="type-c" title="class">c</sup>, <a href="#TransportService" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#TransportService">TransportService</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="CulturalEvent">
+  <h3>CulturalEvent<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#CulturalEvent</p>
+  <div class="comment">
+   <span class="markdown">CulturalEvent class.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#Event" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Event">Event</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has members
+   </dt>
+   <dd>
+    <a href="#Congreso_Bilbao" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Congreso_Bilbao">Congreso Bilbao</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom">
+  <h3>Datavalued Property Atom<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom</p>
+  <div class="comment">
+   <span class="markdown">Used in SWRL rule definitions to support logical inference</span>
+  </div>
+ </div>
+ <div class="entity" id="Event">
+  <h3>Event<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Event</p>
+  <div class="comment">
+   <span class="markdown">Event class.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#CulturalActivity" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#CulturalActivity">CulturalActivity</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has sub-classes
+   </dt>
+   <dd>
+    <a href="#CulturalEvent" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#CulturalEvent">CulturalEvent</a> <sup class="type-c" title="class">c</sup>, <a href="#SportsEvent" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#SportsEvent">SportsEvent</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#hasDate" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#hasDate">hasDate</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#hasEventType" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#hasEventType">hasEventType</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#isEventOf" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#isEventOf">is Event Of</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#hasEvent" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#hasEvent">hasEvent</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    has members
+   </dt>
+   <dd>
+    <a href="#Carnaval_Sevilla" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Carnaval_Sevilla">Carnaval Sevilla</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="FoodEstablishment">
+  <h3>FoodEstablishment<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#FoodEstablishment</p>
+  <div class="comment">
+   <span class="markdown">FoodEstablishment class.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#Place" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Place">Place</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has sub-classes
+   </dt>
+   <dd>
+    <a href="#Bar" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Bar">Bar</a> <sup class="type-c" title="class">c</sup>, <a href="#Restaurant" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Restaurant">Restaurant</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is disjoint with
+   </dt>
+   <dd>
+    <a href="#Accommodation" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Accommodation">Accommodation</a> <sup class="type-c" title="class">c</sup>, <a href="#City" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#City">City</a> <sup class="type-c" title="class">c</sup>, <a href="#CulturalActivity" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#CulturalActivity">CulturalActivity</a> <sup class="type-c" title="class">c</sup>, <a href="#TransportService" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#TransportService">TransportService</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Hotel">
+  <h3>Hotel<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Hotel</p>
+  <div class="comment">
+   <span class="markdown">Hotel class.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#Accommodation" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Accommodation">Accommodation</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#hasStars" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#hasStars">hasStars</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#isHotelOf" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#isHotelOf">is Hotel Of</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#hasHotel" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#hasHotel">hasHotel</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    has members
+   </dt>
+   <dd>
+    <a href="#Hotel_Palace_Zaragoza" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Hotel_Palace_Zaragoza">Hotel Palace Zaragoza</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#Hotel_Royal_Bilbao" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Hotel_Royal_Bilbao">Hotel Royal Bilbao</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#Hotel_Royal_Málaga" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Hotel_Royal_Málaga">Hotel Royal Málaga</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#Hotel_Royal_Pamplona" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Hotel_Royal_Pamplona">Hotel Royal Pamplona</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#Hotel_Vista_Sevilla" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Hotel_Vista_Sevilla">Hotel Vista Sevilla</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://www.w3.org/2003/11/swrl#Imp">
+  <h3>Imp<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.w3.org/2003/11/swrl#Imp</p>
+  <div class="comment">
+   <span class="markdown">Used in SWRL rule definitions to support logical inference</span>
+  </div>
+ </div>
+ <div class="entity" id="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom">
+  <h3>Individual Property Atom<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.w3.org/2003/11/swrl#IndividualPropertyAtom</p>
+  <div class="comment">
+   <span class="markdown">Used in SWRL rule definitions to support logical inference</span>
+  </div>
+ </div>
+ <div class="entity" id="MetroService">
+  <h3>MetroService<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#MetroService</p>
+  <div class="comment">
+   <span class="markdown">MetroService class.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#TransportService" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#TransportService">TransportService</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has members
+   </dt>
+   <dd>
+    <a href="#Metro_Movi_Cádiz" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Metro_Movi_Cádiz">Metro - Movi Cádiz</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#Metro_Urban_Madrid" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Metro_Urban_Madrid">Metro - Urban Madrid</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Monument">
+  <h3>Monument<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Monument</p>
+  <div class="comment">
+   <span class="markdown">Monument class.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#Attraction" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Attraction">Attraction</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has members
+   </dt>
+   <dd>
+    <a href="#Castillo_Sevilla" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Castillo_Sevilla">Castillo Sevilla</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Museum">
+  <h3>Museum<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Museum</p>
+  <div class="comment">
+   <span class="markdown">Museum class.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#Attraction" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Attraction">Attraction</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has members
+   </dt>
+   <dd>
+    <a href="#Castillo_Zaragoza" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Castillo_Zaragoza">Castillo Zaragoza</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#Museo_Madrid" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Museo_Madrid">Museo Madrid</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Park">
+  <h3>Park<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Park</p>
+  <div class="comment">
+   <span class="markdown">Park class.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#Attraction" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Attraction">Attraction</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Place">
+  <h3>Place<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Place</p>
+  <div class="comment">
+   <span class="markdown">Place class.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has sub-classes
+   </dt>
+   <dd>
+    <a href="#Accommodation" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Accommodation">Accommodation</a> <sup class="type-c" title="class">c</sup>, <a href="#City" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#City">City</a> <sup class="type-c" title="class">c</sup>, <a href="#CulturalActivity" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#CulturalActivity">CulturalActivity</a> <sup class="type-c" title="class">c</sup>, <a href="#FoodEstablishment" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#FoodEstablishment">FoodEstablishment</a> <sup class="type-c" title="class">c</sup>, <a href="#TransportService" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#TransportService">TransportService</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#hasPlace" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#hasPlace">has Place</a> <sup class="type-op" title="object property">op</sup>, <a href="#hasPrice" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#hasPrice">hasPrice</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#hasRating" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#hasRating">hasRating</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#isLocatedIn" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#isLocatedIn">isLocatedIn</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Restaurant">
+  <h3>Restaurant<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Restaurant</p>
+  <div class="comment">
+   <span class="markdown">Restaurant class.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#FoodEstablishment" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#FoodEstablishment">FoodEstablishment</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#hasCuisine" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#hasCuisine">hasCuisine</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#isRestaurantOf" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#isRestaurantOf">is Restaurant Of</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#hasRestaurant" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#hasRestaurant">hasRestaurant</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    has members
+   </dt>
+   <dd>
+    <a href="#Restaurante_Delicia_Málaga" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Restaurante_Delicia_Málaga">Restaurante Delicia Málaga</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#Restaurante_Delicia_Pamplona" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Restaurante_Delicia_Pamplona">Restaurante Delicia Pamplona</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#Restaurante_Fusión_Valencia" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Restaurante_Fusión_Valencia">Restaurante Fusión Valencia</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#Restaurante_Gourmet_Madrid" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Restaurante_Gourmet_Madrid">Restaurante Gourmet Madrid</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#Restaurante_Tradición_Toledo" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Restaurante_Tradición_Toledo">Restaurante Tradición Toledo</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="SportsEvent">
+  <h3>SportsEvent<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#SportsEvent</p>
+  <div class="comment">
+   <span class="markdown">SportsEvent class.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#Event" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Event">Event</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has members
+   </dt>
+   <dd>
+    <a href="#Carnaval_Cádiz" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Carnaval_Cádiz">Carnaval Cádiz</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#Congreso_Cádiz" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Congreso_Cádiz">Congreso Cádiz</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#Feria_Toledo" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Feria_Toledo">Feria Toledo</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="TaxiService">
+  <h3>TaxiService<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#TaxiService</p>
+  <div class="comment">
+   <span class="markdown">TaxiService class.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#TransportService" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#TransportService">TransportService</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has members
+   </dt>
+   <dd>
+    <a href="#Taxi_Trans_Bilbao" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Taxi_Trans_Bilbao">Taxi - Trans Bilbao</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="TransportService">
+  <h3>TransportService<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#TransportService</p>
+  <div class="comment">
+   <span class="markdown">TransportService class.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#Place" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Place">Place</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has sub-classes
+   </dt>
+   <dd>
+    <a href="#BusService" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#BusService">BusService</a> <sup class="type-c" title="class">c</sup>, <a href="#MetroService" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#MetroService">MetroService</a> <sup class="type-c" title="class">c</sup>, <a href="#TaxiService" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#TaxiService">TaxiService</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#availableIn" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#availableIn">availableIn</a> <sup class="type-op" title="object property">op</sup>, <a href="#hasTransportType" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#hasTransportType">hasTransportType</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#offersTransport" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#offersTransport">offers Transport</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    has members
+   </dt>
+   <dd>
+    <a href="#Tranvía_Trans_Toledo" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Tranvía_Trans_Toledo">Tranvía - Trans Toledo</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+   <dt>
+    is disjoint with
+   </dt>
+   <dd>
+    <a href="#Accommodation" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Accommodation">Accommodation</a> <sup class="type-c" title="class">c</sup>, <a href="#City" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#City">City</a> <sup class="type-c" title="class">c</sup>, <a href="#CulturalActivity" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#CulturalActivity">CulturalActivity</a> <sup class="type-c" title="class">c</sup>, <a href="#FoodEstablishment" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#FoodEstablishment">FoodEstablishment</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://www.w3.org/2003/11/swrl#Variable">
+  <h3>Variable<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.w3.org/2003/11/swrl#Variable</p>
+  <div class="comment">
+   <span class="markdown">Used in SWRL rule definitions to support logical inference</span>
+  </div>
+ </div>
+</div><div xmlns:widoco="https://w3id.org/widoco/vocab#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="objectproperties">
+ <h3 id="properties" class="list">Object Properties</h3>
+ <ul class="hlist">
+  <li><a href="#availableIn" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#availableIn">availableIn</a></li>
+  <li><a href="#hasPlace" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#hasPlace"> <span>has Place</span> </a></li>
+  <li><a href="#hasAttraction" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#hasAttraction">hasAttraction</a></li>
+  <li><a href="#hasEvent" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#hasEvent">hasEvent</a></li>
+  <li><a href="#hasHotel" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#hasHotel">hasHotel</a></li>
+  <li><a href="#hasRestaurant" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#hasRestaurant">hasRestaurant</a></li>
+  <li><a href="#isAttractionOf" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#isAttractionOf"> <span>is Attraction Of</span> </a></li>
+  <li><a href="#isEventOf" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#isEventOf"> <span>is Event Of</span> </a></li>
+  <li><a href="#isHotelOf" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#isHotelOf"> <span>is Hotel Of</span> </a></li>
+  <li><a href="#isRestaurantOf" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#isRestaurantOf"> <span>is Restaurant Of</span> </a></li>
+  <li><a href="#isLocatedIn" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#isLocatedIn">isLocatedIn</a></li>
+  <li><a href="#offersTransport" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#offersTransport"> <span>offers Transport</span> </a></li>
+ </ul>
+ <div class="entity" id="availableIn">
+  <h3>availableIn<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#availableIn</p>
+  <div class="comment">
+   <span class="markdown">availableIn object property.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#TransportService" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#TransportService">TransportService</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#City" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#City">City</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="hasPlace">
+  <h3>has Place<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#hasPlace</p>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Place" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Place">Place</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#City" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#City">City</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="hasAttraction">
+  <h3>hasAttraction<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#hasAttraction</p>
+  <div class="comment">
+   <span class="markdown">hasAttraction object property.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#City" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#City">City</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#Attraction" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Attraction">Attraction</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     is inverse of
+    </dt>
+    <dd>
+     <a href="#isAttractionOf" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#isAttractionOf">is Attraction Of</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="hasEvent">
+  <h3>hasEvent<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#hasEvent</p>
+  <div class="comment">
+   <span class="markdown">hasEvent object property.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#City" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#City">City</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#Event" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Event">Event</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     is inverse of
+    </dt>
+    <dd>
+     <a href="#isEventOf" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#isEventOf">is Event Of</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="hasHotel">
+  <h3>hasHotel<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#hasHotel</p>
+  <div class="comment">
+   <span class="markdown">hasHotel object property.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#City" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#City">City</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#Hotel" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Hotel">Hotel</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     is inverse of
+    </dt>
+    <dd>
+     <a href="#isHotelOf" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#isHotelOf">is Hotel Of</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="hasRestaurant">
+  <h3>hasRestaurant<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#hasRestaurant</p>
+  <div class="comment">
+   <span class="markdown">hasRestaurant object property.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#City" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#City">City</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#Restaurant" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Restaurant">Restaurant</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     is inverse of
+    </dt>
+    <dd>
+     <a href="#isRestaurantOf" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#isRestaurantOf">is Restaurant Of</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="isAttractionOf">
+  <h3>is Attraction Of<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#isAttractionOf</p>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Attraction" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Attraction">Attraction</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#City" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#City">City</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     is inverse of
+    </dt>
+    <dd>
+     <a href="#hasAttraction" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#hasAttraction">hasAttraction</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="isEventOf">
+  <h3>is Event Of<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#isEventOf</p>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Event" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Event">Event</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#City" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#City">City</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     is inverse of
+    </dt>
+    <dd>
+     <a href="#hasEvent" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#hasEvent">hasEvent</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="isHotelOf">
+  <h3>is Hotel Of<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#isHotelOf</p>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Hotel" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Hotel">Hotel</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#City" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#City">City</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     is inverse of
+    </dt>
+    <dd>
+     <a href="#hasHotel" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#hasHotel">hasHotel</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="isRestaurantOf">
+  <h3>is Restaurant Of<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#isRestaurantOf</p>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Restaurant" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Restaurant">Restaurant</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#City" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#City">City</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     is inverse of
+    </dt>
+    <dd>
+     <a href="#hasRestaurant" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#hasRestaurant">hasRestaurant</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="isLocatedIn">
+  <h3>isLocatedIn<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#isLocatedIn</p>
+  <div class="comment">
+   <span class="markdown">isLocatedIn object property.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Place" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Place">Place</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#City" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#City">City</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="offersTransport">
+  <h3>offers Transport<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#offersTransport</p>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#TransportService" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#TransportService">TransportService</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#City" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#City">City</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+</div><div xmlns:widoco="https://w3id.org/widoco/vocab#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="dataproperties">
+ <h3 id="dataproperties-headline" class="list">Data Properties</h3>
+ <ul class="hlist">
+  <li><a href="#hasCoordinates" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#hasCoordinates">hasCoordinates</a></li>
+  <li><a href="#hasCuisine" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#hasCuisine">hasCuisine</a></li>
+  <li><a href="#hasDate" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#hasDate">hasDate</a></li>
+  <li><a href="#hasEventType" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#hasEventType">hasEventType</a></li>
+  <li><a href="#hasPrice" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#hasPrice">hasPrice</a></li>
+  <li><a href="#hasRating" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#hasRating">hasRating</a></li>
+  <li><a href="#hasStars" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#hasStars">hasStars</a></li>
+  <li><a href="#hasTransportType" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#hasTransportType">hasTransportType</a></li>
+ </ul>
+ <div class="entity" id="hasCoordinates">
+  <h3>hasCoordinates<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#hasCoordinates</p>
+  <div class="comment">
+   <span class="markdown">hasCoordinates data property.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#City" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#City">City</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2001/XMLSchema#string" target="_blank" title="http://www.w3.org/2001/XMLSchema#string">string</a>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="hasCuisine">
+  <h3>hasCuisine<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#hasCuisine</p>
+  <div class="comment">
+   <span class="markdown">hasCuisine data property.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Restaurant" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Restaurant">Restaurant</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2001/XMLSchema#string" target="_blank" title="http://www.w3.org/2001/XMLSchema#string">string</a>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="hasDate">
+  <h3>hasDate<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#hasDate</p>
+  <div class="comment">
+   <span class="markdown">hasDate data property.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Event" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Event">Event</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2001/XMLSchema#date" target="_blank" title="http://www.w3.org/2001/XMLSchema#date">date</a>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="hasEventType">
+  <h3>hasEventType<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#hasEventType</p>
+  <div class="comment">
+   <span class="markdown">hasEventType data property.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Event" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Event">Event</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2001/XMLSchema#string" target="_blank" title="http://www.w3.org/2001/XMLSchema#string">string</a>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="hasPrice">
+  <h3>hasPrice<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#hasPrice</p>
+  <div class="comment">
+   <span class="markdown">hasPrice data property.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Place" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Place">Place</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2001/XMLSchema#decimal" target="_blank" title="http://www.w3.org/2001/XMLSchema#decimal">decimal</a>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="hasRating">
+  <h3>hasRating<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#hasRating</p>
+  <div class="comment">
+   <span class="markdown">hasRating data property.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Place" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Place">Place</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2001/XMLSchema#float" target="_blank" title="http://www.w3.org/2001/XMLSchema#float">float</a>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="hasStars">
+  <h3>hasStars<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#hasStars</p>
+  <div class="comment">
+   <span class="markdown">hasStars data property.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Hotel" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Hotel">Hotel</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2001/XMLSchema#integer" target="_blank" title="http://www.w3.org/2001/XMLSchema#integer">integer</a>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="hasTransportType">
+  <h3>hasTransportType<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#hasTransportType</p>
+  <div class="comment">
+   <span class="markdown">hasTransportType data property.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#TransportService" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#TransportService">TransportService</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2001/XMLSchema#string" target="_blank" title="http://www.w3.org/2001/XMLSchema#string">string</a>
+    </dd>
+   </dl>
+  </div>
+ </div>
+</div><div xmlns:widoco="https://w3id.org/widoco/vocab#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="annotationproperties">
+ <h3 id="annotationproperties" class="list">Annotation Properties</h3>
+ <ul class="hlist">
+  <li><a href="#http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled" title="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled"> <span>is Rule Enabled</span> </a></li>
+ </ul>
+ <div class="entity" id="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled">
+  <h3>is Rule Enabled<sup class="type-ap" title="annotation property">ap</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled</p>
+ </div>
+</div><div xmlns:widoco="https://w3id.org/widoco/vocab#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="namedindividuals">
+ <h3 id="namedindividuals" class="list">Named Individuals</h3>
+ <ul class="hlist">
+  <li><a href="#Autobús_City_Zaragoza" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Autobús_City_Zaragoza">Autobús - City Zaragoza</a></li>
+  <li><a href="#Barcelona" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Barcelona">Barcelona</a></li>
+  <li><a href="#Carnaval_Cádiz" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Carnaval_Cádiz">Carnaval Cádiz</a></li>
+  <li><a href="#Carnaval_Sevilla" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Carnaval_Sevilla">Carnaval Sevilla</a></li>
+  <li><a href="#Castillo_Cádiz" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Castillo_Cádiz">Castillo Cádiz</a></li>
+  <li><a href="#Castillo_Sevilla" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Castillo_Sevilla">Castillo Sevilla</a></li>
+  <li><a href="#Castillo_Zaragoza" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Castillo_Zaragoza">Castillo Zaragoza</a></li>
+  <li><a href="#Congreso_Bilbao" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Congreso_Bilbao">Congreso Bilbao</a></li>
+  <li><a href="#Congreso_Cádiz" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Congreso_Cádiz">Congreso Cádiz</a></li>
+  <li><a href="#Feria_Toledo" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Feria_Toledo">Feria Toledo</a></li>
+  <li><a href="#http://dbpedia.org/resource/Flamenco" title="http://dbpedia.org/resource/Flamenco"> <span>Flamenco</span> </a></li>
+  <li><a href="#Hotel_Palace_Zaragoza" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Hotel_Palace_Zaragoza">Hotel Palace Zaragoza</a></li>
+  <li><a href="#Hotel_Royal_Bilbao" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Hotel_Royal_Bilbao">Hotel Royal Bilbao</a></li>
+  <li><a href="#Hotel_Royal_Málaga" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Hotel_Royal_Málaga">Hotel Royal Málaga</a></li>
+  <li><a href="#Hotel_Royal_Pamplona" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Hotel_Royal_Pamplona">Hotel Royal Pamplona</a></li>
+  <li><a href="#Hotel_Vista_Sevilla" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Hotel_Vista_Sevilla">Hotel Vista Sevilla</a></li>
+  <li><a href="#Madrid" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Madrid">Madrid</a></li>
+  <li><a href="#Metro_Movi_Cádiz" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Metro_Movi_Cádiz">Metro - Movi Cádiz</a></li>
+  <li><a href="#Metro_Urban_Madrid" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Metro_Urban_Madrid">Metro - Urban Madrid</a></li>
+  <li><a href="#Museo_Madrid" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Museo_Madrid">Museo Madrid</a></li>
+  <li><a href="#Restaurante_Delicia_Málaga" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Restaurante_Delicia_Málaga">Restaurante Delicia Málaga</a></li>
+  <li><a href="#Restaurante_Delicia_Pamplona" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Restaurante_Delicia_Pamplona">Restaurante Delicia Pamplona</a></li>
+  <li><a href="#Restaurante_Fusión_Valencia" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Restaurante_Fusión_Valencia">Restaurante Fusión Valencia</a></li>
+  <li><a href="#Restaurante_Gourmet_Madrid" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Restaurante_Gourmet_Madrid">Restaurante Gourmet Madrid</a></li>
+  <li><a href="#Restaurante_Tradición_Toledo" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Restaurante_Tradición_Toledo">Restaurante Tradición Toledo</a></li>
+  <li><a href="#http://dbpedia.org/resource/Seville" title="http://dbpedia.org/resource/Seville"> <span>Seville</span> </a></li>
+  <li><a href="#http://dbpedia.org/resource/Seville_Cathedral" title="http://dbpedia.org/resource/Seville_Cathedral"> <span>Seville Cathedral</span> </a></li>
+  <li><a href="#Taxi_Trans_Bilbao" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Taxi_Trans_Bilbao">Taxi - Trans Bilbao</a></li>
+  <li><a href="#Toledo" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Toledo">Toledo</a></li>
+  <li><a href="#Tranvía_Trans_Toledo" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Tranvía_Trans_Toledo">Tranvía - Trans Toledo</a></li>
+  <li><a href="#Valencia" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Valencia">Valencia</a></li>
+  <li><a href="#Zaragoza" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Zaragoza">Zaragoza</a></li>
+ </ul>
+ <div class="entity" id="Autobús_City_Zaragoza">
+  <h3>Autobús - City Zaragoza<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Autobús_City_Zaragoza</p>
+  <div class="comment">
+   <span class="markdown">Instance of BusService.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    belongs to
+   </dt>
+   <dd>
+    <a href="#BusService" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#BusService">BusService</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Barcelona">
+  <h3>Barcelona<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Barcelona</p>
+  <div class="comment">
+   <span class="markdown">Instance of City.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    belongs to
+   </dt>
+   <dd>
+    <a href="#City" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#City">City</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Carnaval_Cádiz">
+  <h3>Carnaval Cádiz<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Carnaval_Cádiz</p>
+  <div class="comment">
+   <span class="markdown">Instance of SportsEvent.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    belongs to
+   </dt>
+   <dd>
+    <a href="#SportsEvent" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#SportsEvent">SportsEvent</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Carnaval_Sevilla">
+  <h3>Carnaval Sevilla<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Carnaval_Sevilla</p>
+  <div class="comment">
+   <span class="markdown">Instance of Event.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    belongs to
+   </dt>
+   <dd>
+    <a href="#Event" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Event">Event</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Castillo_Cádiz">
+  <h3>Castillo Cádiz<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Castillo_Cádiz</p>
+  <div class="comment">
+   <span class="markdown">Instance of Attraction.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    belongs to
+   </dt>
+   <dd>
+    <a href="#Attraction" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Attraction">Attraction</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Castillo_Sevilla">
+  <h3>Castillo Sevilla<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Castillo_Sevilla</p>
+  <div class="comment">
+   <span class="markdown">Instance of Monument.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    belongs to
+   </dt>
+   <dd>
+    <a href="#Monument" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Monument">Monument</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Castillo_Zaragoza">
+  <h3>Castillo Zaragoza<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Castillo_Zaragoza</p>
+  <div class="comment">
+   <span class="markdown">Instance of Museum.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    belongs to
+   </dt>
+   <dd>
+    <a href="#Museum" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Museum">Museum</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Congreso_Bilbao">
+  <h3>Congreso Bilbao<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Congreso_Bilbao</p>
+  <div class="comment">
+   <span class="markdown">Instance of CulturalEvent.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    belongs to
+   </dt>
+   <dd>
+    <a href="#CulturalEvent" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#CulturalEvent">CulturalEvent</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Congreso_Cádiz">
+  <h3>Congreso Cádiz<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Congreso_Cádiz</p>
+  <div class="comment">
+   <span class="markdown">Instance of SportsEvent.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    belongs to
+   </dt>
+   <dd>
+    <a href="#SportsEvent" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#SportsEvent">SportsEvent</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Feria_Toledo">
+  <h3>Feria Toledo<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Feria_Toledo</p>
+  <div class="comment">
+   <span class="markdown">Instance of SportsEvent.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    belongs to
+   </dt>
+   <dd>
+    <a href="#SportsEvent" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#SportsEvent">SportsEvent</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://dbpedia.org/resource/Flamenco">
+  <h3>Flamenco<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://dbpedia.org/resource/Flamenco</p>
+  <dl class="description">
+   <dt>
+    is same as
+   </dt>
+   <dd>
+    <a href="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Flamenco" target="_blank" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Flamenco">Flamenco</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+   <dt>
+    has facts
+   </dt>
+   <dd>
+    <a href="http://www.w3.org/2002/07/owl#sameAs" target="_blank" title="http://www.w3.org/2002/07/owl#sameAs">same As</a> <sup class="type-ep" title="external property">ep</sup> <a href="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Flamenco" target="_blank" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Flamenco">Flamenco</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Hotel_Palace_Zaragoza">
+  <h3>Hotel Palace Zaragoza<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Hotel_Palace_Zaragoza</p>
+  <div class="comment">
+   <span class="markdown">Instance of Hotel.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    belongs to
+   </dt>
+   <dd>
+    <a href="#Hotel" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Hotel">Hotel</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Hotel_Royal_Bilbao">
+  <h3>Hotel Royal Bilbao<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Hotel_Royal_Bilbao</p>
+  <div class="comment">
+   <span class="markdown">Instance of Hotel.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    belongs to
+   </dt>
+   <dd>
+    <a href="#Hotel" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Hotel">Hotel</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Hotel_Royal_Málaga">
+  <h3>Hotel Royal Málaga<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Hotel_Royal_Málaga</p>
+  <div class="comment">
+   <span class="markdown">Instance of Hotel.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    belongs to
+   </dt>
+   <dd>
+    <a href="#Hotel" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Hotel">Hotel</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Hotel_Royal_Pamplona">
+  <h3>Hotel Royal Pamplona<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Hotel_Royal_Pamplona</p>
+  <div class="comment">
+   <span class="markdown">Instance of Hotel.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    belongs to
+   </dt>
+   <dd>
+    <a href="#Hotel" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Hotel">Hotel</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Hotel_Vista_Sevilla">
+  <h3>Hotel Vista Sevilla<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Hotel_Vista_Sevilla</p>
+  <div class="comment">
+   <span class="markdown">Instance of Hotel.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    belongs to
+   </dt>
+   <dd>
+    <a href="#Hotel" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Hotel">Hotel</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Madrid">
+  <h3>Madrid<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Madrid</p>
+  <div class="comment">
+   <span class="markdown">Instance of City.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    belongs to
+   </dt>
+   <dd>
+    <a href="#City" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#City">City</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Metro_Movi_Cádiz">
+  <h3>Metro - Movi Cádiz<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Metro_Movi_Cádiz</p>
+  <div class="comment">
+   <span class="markdown">Instance of MetroService.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    belongs to
+   </dt>
+   <dd>
+    <a href="#MetroService" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#MetroService">MetroService</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Metro_Urban_Madrid">
+  <h3>Metro - Urban Madrid<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Metro_Urban_Madrid</p>
+  <div class="comment">
+   <span class="markdown">Instance of MetroService.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    belongs to
+   </dt>
+   <dd>
+    <a href="#MetroService" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#MetroService">MetroService</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Museo_Madrid">
+  <h3>Museo Madrid<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Museo_Madrid</p>
+  <div class="comment">
+   <span class="markdown">Instance of Museum.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    belongs to
+   </dt>
+   <dd>
+    <a href="#Museum" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Museum">Museum</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Restaurante_Delicia_Málaga">
+  <h3>Restaurante Delicia Málaga<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Restaurante_Delicia_Málaga</p>
+  <div class="comment">
+   <span class="markdown">Instance of Restaurant.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    belongs to
+   </dt>
+   <dd>
+    <a href="#Restaurant" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Restaurant">Restaurant</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Restaurante_Delicia_Pamplona">
+  <h3>Restaurante Delicia Pamplona<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Restaurante_Delicia_Pamplona</p>
+  <div class="comment">
+   <span class="markdown">Instance of Restaurant.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    belongs to
+   </dt>
+   <dd>
+    <a href="#Restaurant" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Restaurant">Restaurant</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Restaurante_Fusión_Valencia">
+  <h3>Restaurante Fusión Valencia<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Restaurante_Fusión_Valencia</p>
+  <div class="comment">
+   <span class="markdown">Instance of Restaurant.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    belongs to
+   </dt>
+   <dd>
+    <a href="#Restaurant" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Restaurant">Restaurant</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Restaurante_Gourmet_Madrid">
+  <h3>Restaurante Gourmet Madrid<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Restaurante_Gourmet_Madrid</p>
+  <div class="comment">
+   <span class="markdown">Instance of Restaurant.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    belongs to
+   </dt>
+   <dd>
+    <a href="#Restaurant" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Restaurant">Restaurant</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Restaurante_Tradición_Toledo">
+  <h3>Restaurante Tradición Toledo<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Restaurante_Tradición_Toledo</p>
+  <div class="comment">
+   <span class="markdown">Instance of Restaurant.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    belongs to
+   </dt>
+   <dd>
+    <a href="#Restaurant" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Restaurant">Restaurant</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://dbpedia.org/resource/Seville">
+  <h3>Seville<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://dbpedia.org/resource/Seville</p>
+  <dl class="description">
+   <dt>
+    is same as
+   </dt>
+   <dd>
+    <a href="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Seville" target="_blank" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Seville">Seville</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+   <dt>
+    has facts
+   </dt>
+   <dd>
+    <a href="http://www.w3.org/2002/07/owl#sameAs" target="_blank" title="http://www.w3.org/2002/07/owl#sameAs">same As</a> <sup class="type-ep" title="external property">ep</sup> <a href="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Seville" target="_blank" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Seville">Seville</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://dbpedia.org/resource/Seville_Cathedral">
+  <h3>Seville Cathedral<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://dbpedia.org/resource/Seville_Cathedral</p>
+  <dl class="description">
+   <dt>
+    is same as
+   </dt>
+   <dd>
+    <a href="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Cathedral" target="_blank" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Cathedral">Cathedral</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+   <dt>
+    has facts
+   </dt>
+   <dd>
+    <a href="http://www.w3.org/2002/07/owl#sameAs" target="_blank" title="http://www.w3.org/2002/07/owl#sameAs">same As</a> <sup class="type-ep" title="external property">ep</sup> <a href="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Cathedral" target="_blank" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Cathedral">Cathedral</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Taxi_Trans_Bilbao">
+  <h3>Taxi - Trans Bilbao<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Taxi_Trans_Bilbao</p>
+  <div class="comment">
+   <span class="markdown">Instance of TaxiService.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    belongs to
+   </dt>
+   <dd>
+    <a href="#TaxiService" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#TaxiService">TaxiService</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Toledo">
+  <h3>Toledo<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Toledo</p>
+  <div class="comment">
+   <span class="markdown">Instance of City.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    belongs to
+   </dt>
+   <dd>
+    <a href="#City" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#City">City</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Tranvía_Trans_Toledo">
+  <h3>Tranvía - Trans Toledo<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Tranvía_Trans_Toledo</p>
+  <div class="comment">
+   <span class="markdown">Instance of TransportService.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    belongs to
+   </dt>
+   <dd>
+    <a href="#TransportService" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#TransportService">TransportService</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Valencia">
+  <h3>Valencia<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Valencia</p>
+  <div class="comment">
+   <span class="markdown">Instance of City.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    belongs to
+   </dt>
+   <dd>
+    <a href="#City" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#City">City</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Zaragoza">
+  <h3>Zaragoza<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Zaragoza</p>
+  <div class="comment">
+   <span class="markdown">Instance of City.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    belongs to
+   </dt>
+   <dd>
+    <a href="#City" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#City">City</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+</div><div xmlns:widoco="https://w3id.org/widoco/vocab#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="swrlrules">
+ <h3 id="swrlrules" class="list">SWRL rules</h3>
+ <ul class="hlist">
+  <li><a href="#d4e1859">CheapRestaurantRule</a></li>
+  <li><a href="#d4e1738">CulturalEventInFutureRule</a></li>
+  <li><a href="#d4e1535">HighRatedMuseumRule</a></li>
+  <li><a href="#d4e2165">HighScoreHotelRule</a></li>
+  <li><a href="#d4e1152">HotelInCityRule</a></li>
+  <li><a href="#d4e1333">NotableAttractionRule</a></li>
+  <li><a href="#d4e1980">RatedRestaurantNearAttraction</a></li>
+  <li><a href="#d4e1454">SpanishCuisineRule</a></li>
+  <li><a href="#d4e1252">SportsEventRule</a></li>
+  <li><a href="#d4e1657">UrbanTransportRule</a></li>
+ </ul>
+ <div class="entity" id="d4e1859">
+  <h3>CheapRestaurantRule<span class="backlink">back to <a href="#toc">ToC</a> or <a href="#swrlrules">SWRL ToC</a> </span></h3>
+  <p><br><br><a href="http://www.w3.org/2003/11/swrlb#lessThan" title="lessThan">lessThan</a>(?) , <a href="#hasPrice" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#hasPrice">hasPrice</a> <sup class="type-dp" title="data property">dp</sup>(?,?) , <a href="#Restaurant" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Restaurant">Restaurant</a> <sup class="type-c" title="class">c</sup>(?) -&gt; <a href="#Restaurant" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Restaurant">Restaurant</a> <sup class="type-c" title="class">c</sup>(?)</p>
+ </div>
+ <div class="entity" id="d4e1738">
+  <h3>CulturalEventInFutureRule<span class="backlink">back to <a href="#toc">ToC</a> or <a href="#swrlrules">SWRL ToC</a> </span></h3>
+  <p><br><br><a href="http://www.w3.org/2003/11/swrlb#greaterThan" title="greaterThan">greaterThan</a>(?) , <a href="#CulturalEvent" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#CulturalEvent">CulturalEvent</a> <sup class="type-c" title="class">c</sup>(?) , <a href="#hasDate" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#hasDate">hasDate</a> <sup class="type-dp" title="data property">dp</sup>(?,?) -&gt; <a href="#CulturalEvent" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#CulturalEvent">CulturalEvent</a> <sup class="type-c" title="class">c</sup>(?)</p>
+ </div>
+ <div class="entity" id="d4e1535">
+  <h3>HighRatedMuseumRule<span class="backlink">back to <a href="#toc">ToC</a> or <a href="#swrlrules">SWRL ToC</a> </span></h3>
+  <p><br><br><a href="#hasRating" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#hasRating">hasRating</a> <sup class="type-dp" title="data property">dp</sup>(?,?) , <a href="#Museum" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Museum">Museum</a> <sup class="type-c" title="class">c</sup>(?) , <a href="http://www.w3.org/2003/11/swrlb#greaterThan" title="greaterThan">greaterThan</a>(?) -&gt; <a href="#Museum" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Museum">Museum</a> <sup class="type-c" title="class">c</sup>(?)</p>
+ </div>
+ <div class="entity" id="d4e2165">
+  <h3>HighScoreHotelRule<span class="backlink">back to <a href="#toc">ToC</a> or <a href="#swrlrules">SWRL ToC</a> </span></h3>
+  <p><br><br><a href="http://www.w3.org/2003/11/swrlb#greaterThan" title="greaterThan">greaterThan</a>(?) , <a href="#hasRating" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#hasRating">hasRating</a> <sup class="type-dp" title="data property">dp</sup>(?,?) , <a href="#Hotel" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Hotel">Hotel</a> <sup class="type-c" title="class">c</sup>(?) , <a href="http://www.w3.org/2003/11/swrlb#greaterThan" title="greaterThan">greaterThan</a>(?) , <a href="#hasStars" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#hasStars">hasStars</a> <sup class="type-dp" title="data property">dp</sup>(?,?) -&gt; <a href="#Hotel" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Hotel">Hotel</a> <sup class="type-c" title="class">c</sup>(?)</p>
+ </div>
+ <div class="entity" id="d4e1152">
+  <h3>HotelInCityRule<span class="backlink">back to <a href="#toc">ToC</a> or <a href="#swrlrules">SWRL ToC</a> </span></h3>
+  <p><br><br><a href="#City" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#City">City</a> <sup class="type-c" title="class">c</sup>(?) , <a href="#isLocatedIn" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#isLocatedIn">isLocatedIn</a> <sup class="type-op" title="object property">op</sup>(?,?) , <a href="#Hotel" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Hotel">Hotel</a> <sup class="type-c" title="class">c</sup>(?) -&gt; <a href="#Hotel" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Hotel">Hotel</a> <sup class="type-c" title="class">c</sup>(?)</p>
+ </div>
+ <div class="entity" id="d4e1333">
+  <h3>NotableAttractionRule<span class="backlink">back to <a href="#toc">ToC</a> or <a href="#swrlrules">SWRL ToC</a> </span></h3>
+  <p><br><br><a href="#Attraction" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Attraction">Attraction</a> <sup class="type-c" title="class">c</sup>(?) , <a href="http://www.w3.org/2003/11/swrlb#greaterThan" title="greaterThan">greaterThan</a>(?) , <a href="#hasRating" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#hasRating">hasRating</a> <sup class="type-dp" title="data property">dp</sup>(?,?) -&gt; <a href="#Attraction" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Attraction">Attraction</a> <sup class="type-c" title="class">c</sup>(?)</p>
+ </div>
+ <div class="entity" id="d4e1980">
+  <h3>RatedRestaurantNearAttraction<span class="backlink">back to <a href="#toc">ToC</a> or <a href="#swrlrules">SWRL ToC</a> </span></h3>
+  <p><br><br><a href="http://www.w3.org/2003/11/swrlb#greaterThan" title="greaterThan">greaterThan</a>(?) , <a href="#hasRating" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#hasRating">hasRating</a> <sup class="type-dp" title="data property">dp</sup>(?,?) , <a href="#Attraction" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Attraction">Attraction</a> <sup class="type-c" title="class">c</sup>(?) , <a href="#isLocatedIn" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#isLocatedIn">isLocatedIn</a> <sup class="type-op" title="object property">op</sup>(?,?) , <a href="#Restaurant" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Restaurant">Restaurant</a> <sup class="type-c" title="class">c</sup>(?) , <a href="#isLocatedIn" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#isLocatedIn">isLocatedIn</a> <sup class="type-op" title="object property">op</sup>(?,?) -&gt; <a href="#Restaurant" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Restaurant">Restaurant</a> <sup class="type-c" title="class">c</sup>(?)</p>
+ </div>
+ <div class="entity" id="d4e1454">
+  <h3>SpanishCuisineRule<span class="backlink">back to <a href="#toc">ToC</a> or <a href="#swrlrules">SWRL ToC</a> </span></h3>
+  <p><br><br><a href="#Restaurant" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Restaurant">Restaurant</a> <sup class="type-c" title="class">c</sup>(?) , <a href="#hasCuisine" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#hasCuisine">hasCuisine</a> <sup class="type-dp" title="data property">dp</sup>(?,"Española") -&gt; <a href="#Restaurant" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Restaurant">Restaurant</a> <sup class="type-c" title="class">c</sup>(?)</p>
+ </div>
+ <div class="entity" id="d4e1252">
+  <h3>SportsEventRule<span class="backlink">back to <a href="#toc">ToC</a> or <a href="#swrlrules">SWRL ToC</a> </span></h3>
+  <p><br><br><a href="#Event" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Event">Event</a> <sup class="type-c" title="class">c</sup>(?) , <a href="#hasEventType" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#hasEventType">hasEventType</a> <sup class="type-dp" title="data property">dp</sup>(?,"Deportivo") -&gt; <a href="#SportsEvent" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#SportsEvent">SportsEvent</a> <sup class="type-c" title="class">c</sup>(?)</p>
+ </div>
+ <div class="entity" id="d4e1657">
+  <h3>UrbanTransportRule<span class="backlink">back to <a href="#toc">ToC</a> or <a href="#swrlrules">SWRL ToC</a> </span></h3>
+  <p><br><br><a href="#hasTransportType" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#hasTransportType">hasTransportType</a> <sup class="type-dp" title="data property">dp</sup>(?,"Metro") , <a href="#TransportService" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#TransportService">TransportService</a> <sup class="type-c" title="class">c</sup>(?) -&gt; <a href="#TransportService" title="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#TransportService">TransportService</a> <sup class="type-c" title="class">c</sup>(?)</p>
+ </div>
+</div><div id="legend">
+<h2>Legend <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<div   class="entity">
+<sup class="type-c" title="Classes">c</sup>: Classes <br/>
+<sup class="type-op" title="Object Properties">op</sup>: Object Properties <br/>
+<sup class="type-dp" title="Data Properties">dp</sup>: Data Properties <br/>
+<sup class="type-ni" title="Named Individuals">ni</sup>: Named Individuals <br/>
+<sup class="type-ep" title="External Properties">ep</sup>: External Properties
+</div>
+</div>
+</div>
+    
+
+<!--REFERENCES SECTION-->
+  <div id="references">
+<h2 id="ref" class="list">References <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<span class="markdown">
+Add your references here. It is recommended to have them as a list.</span>
+
+</div>
+<div id="acknowledgments">
+<h2 id="ack" class="list">Acknowledgments <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<p>
+The authors would like to thank <a href="http://www.essepuntato.it/">Silvio Peroni</a> for developing <a href="http://www.essepuntato.it/lode">LODE</a>, a Live OWL Documentation Environment, which is used for representing the Cross Referencing Section of this document and <a href="https://w3id.org/people/dgarijo">Daniel Garijo</a> for developing <a href="https://github.com/dgarijo/Widoco">Widoco</a>, the program used to create the template used in this documentation.</p>
+</div>
+
+
+</div>
+</body>
+</html>

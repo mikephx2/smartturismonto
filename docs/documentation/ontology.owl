@@ -1,0 +1,1744 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#"
+     xml:base="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:swrl="http://www.w3.org/2003/11/swrl#"
+     xmlns:swrla="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#"
+     xmlns:swrlb="http://www.w3.org/2003/11/swrlb#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled -->
+
+
+    <owl:AnnotationProperty rdf:about="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://www.w3.org/2001/XMLSchema#date -->
+
+
+    <rdfs:Datatype rdf:about="http://www.w3.org/2001/XMLSchema#date"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#availableIn -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#availableIn">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#TransportService"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#City"/>
+        <rdfs:comment>availableIn object property.</rdfs:comment>
+        <rdfs:label>availableIn</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#hasAttraction -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#hasAttraction">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#isAttractionOf"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#City"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Attraction"/>
+        <rdfs:comment>hasAttraction object property.</rdfs:comment>
+        <rdfs:label>hasAttraction</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#hasEvent -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#hasEvent">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#isEventOf"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#City"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Event"/>
+        <rdfs:comment>hasEvent object property.</rdfs:comment>
+        <rdfs:label>hasEvent</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#hasHotel -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#hasHotel">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#isHotelOf"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#City"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Hotel"/>
+        <rdfs:comment>hasHotel object property.</rdfs:comment>
+        <rdfs:label>hasHotel</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#hasPlace -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#hasPlace">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Place"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#City"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#hasRestaurant -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#hasRestaurant">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#isRestaurantOf"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#City"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Restaurant"/>
+        <rdfs:comment>hasRestaurant object property.</rdfs:comment>
+        <rdfs:label>hasRestaurant</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#isAttractionOf -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#isAttractionOf">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Attraction"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#City"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#isEventOf -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#isEventOf">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Event"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#City"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#isHotelOf -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#isHotelOf">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Hotel"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#City"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#isLocatedIn -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#isLocatedIn">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Place"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#City"/>
+        <rdfs:comment>isLocatedIn object property.</rdfs:comment>
+        <rdfs:label>isLocatedIn</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#isRestaurantOf -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#isRestaurantOf">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Restaurant"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#City"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#offersTransport -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#offersTransport">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#TransportService"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#City"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#hasCoordinates -->
+
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#hasCoordinates">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#City"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>hasCoordinates data property.</rdfs:comment>
+        <rdfs:label>hasCoordinates</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#hasCuisine -->
+
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#hasCuisine">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Restaurant"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>hasCuisine data property.</rdfs:comment>
+        <rdfs:label>hasCuisine</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#hasDate -->
+
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#hasDate">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Event"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
+        <rdfs:comment>hasDate data property.</rdfs:comment>
+        <rdfs:label>hasDate</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#hasEventType -->
+
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#hasEventType">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Event"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>hasEventType data property.</rdfs:comment>
+        <rdfs:label>hasEventType</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#hasPrice -->
+
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#hasPrice">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Place"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+        <rdfs:comment>hasPrice data property.</rdfs:comment>
+        <rdfs:label>hasPrice</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#hasRating -->
+
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#hasRating">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Place"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:comment>hasRating data property.</rdfs:comment>
+        <rdfs:label>hasRating</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#hasStars -->
+
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#hasStars">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Hotel"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:comment>hasStars data property.</rdfs:comment>
+        <rdfs:label>hasStars</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#hasTransportType -->
+
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#hasTransportType">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#TransportService"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>hasTransportType data property.</rdfs:comment>
+        <rdfs:label>hasTransportType</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Accommodation -->
+
+
+    <owl:Class rdf:about="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Accommodation">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Place"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#City"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#CulturalActivity"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#FoodEstablishment"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#TransportService"/>
+        <rdfs:comment>Accommodation class.</rdfs:comment>
+        <rdfs:label>Accommodation</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Attraction -->
+
+
+    <owl:Class rdf:about="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Attraction">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#CulturalActivity"/>
+        <rdfs:comment>Attraction class.</rdfs:comment>
+        <rdfs:label>Attraction</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Bar -->
+
+
+    <owl:Class rdf:about="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Bar">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#FoodEstablishment"/>
+        <rdfs:comment>Bar class.</rdfs:comment>
+        <rdfs:label>Bar</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#BusService -->
+
+
+    <owl:Class rdf:about="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#BusService">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#TransportService"/>
+        <rdfs:comment>BusService class.</rdfs:comment>
+        <rdfs:label>BusService</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#City -->
+
+
+    <owl:Class rdf:about="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#City">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Place"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#CulturalActivity"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#FoodEstablishment"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#TransportService"/>
+        <rdfs:comment>City class.</rdfs:comment>
+        <rdfs:label>City</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#CulturalActivity -->
+
+
+    <owl:Class rdf:about="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#CulturalActivity">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Place"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#FoodEstablishment"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#TransportService"/>
+        <rdfs:comment>CulturalActivity class.</rdfs:comment>
+        <rdfs:label>CulturalActivity</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#CulturalEvent -->
+
+
+    <owl:Class rdf:about="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#CulturalEvent">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Event"/>
+        <rdfs:comment>CulturalEvent class.</rdfs:comment>
+        <rdfs:label>CulturalEvent</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Event -->
+
+
+    <owl:Class rdf:about="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Event">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#CulturalActivity"/>
+        <rdfs:comment>Event class.</rdfs:comment>
+        <rdfs:label>Event</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#FoodEstablishment -->
+
+
+    <owl:Class rdf:about="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#FoodEstablishment">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Place"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#TransportService"/>
+        <rdfs:comment>FoodEstablishment class.</rdfs:comment>
+        <rdfs:label>FoodEstablishment</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Hotel -->
+
+
+    <owl:Class rdf:about="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Hotel">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Accommodation"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#isLocatedIn"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#hasStars"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>Hotel class.</rdfs:comment>
+        <rdfs:label>Hotel</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#MetroService -->
+
+
+    <owl:Class rdf:about="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#MetroService">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#TransportService"/>
+        <rdfs:comment>MetroService class.</rdfs:comment>
+        <rdfs:label>MetroService</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Monument -->
+
+
+    <owl:Class rdf:about="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Monument">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Attraction"/>
+        <rdfs:comment>Monument class.</rdfs:comment>
+        <rdfs:label>Monument</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Museum -->
+
+
+    <owl:Class rdf:about="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Museum">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Attraction"/>
+        <rdfs:comment>Museum class.</rdfs:comment>
+        <rdfs:label>Museum</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Park -->
+
+
+    <owl:Class rdf:about="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Park">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Attraction"/>
+        <rdfs:comment>Park class.</rdfs:comment>
+        <rdfs:label>Park</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Place -->
+
+
+    <owl:Class rdf:about="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Place">
+        <rdfs:comment>Place class.</rdfs:comment>
+        <rdfs:label>Place</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Restaurant -->
+
+
+    <owl:Class rdf:about="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Restaurant">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#FoodEstablishment"/>
+        <rdfs:comment>Restaurant class.</rdfs:comment>
+        <rdfs:label>Restaurant</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#SportsEvent -->
+
+
+    <owl:Class rdf:about="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#SportsEvent">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Event"/>
+        <rdfs:comment>SportsEvent class.</rdfs:comment>
+        <rdfs:label>SportsEvent</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#TaxiService -->
+
+
+    <owl:Class rdf:about="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#TaxiService">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#TransportService"/>
+        <rdfs:comment>TaxiService class.</rdfs:comment>
+        <rdfs:label>TaxiService</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#TransportService -->
+
+
+    <owl:Class rdf:about="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#TransportService">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Place"/>
+        <rdfs:comment>TransportService class.</rdfs:comment>
+        <rdfs:label>TransportService</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/2003/11/swrl#AtomList -->
+
+
+    <owl:Class rdf:about="http://www.w3.org/2003/11/swrl#AtomList">
+        <rdfs:comment xml:lang="en">Used in SWRL rule definitions to support logical inference</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/2003/11/swrl#BuiltinAtom -->
+
+
+    <owl:Class rdf:about="http://www.w3.org/2003/11/swrl#BuiltinAtom">
+        <rdfs:comment xml:lang="en">Used in SWRL rule definitions to support logical inference</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/2003/11/swrl#ClassAtom -->
+
+
+    <owl:Class rdf:about="http://www.w3.org/2003/11/swrl#ClassAtom">
+        <rdfs:comment xml:lang="en">Used in SWRL rule definitions to support logical inference</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom -->
+
+
+    <owl:Class rdf:about="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom">
+        <rdfs:comment xml:lang="en">Used in SWRL rule definitions to support logical inference</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/2003/11/swrl#Imp -->
+
+
+    <owl:Class rdf:about="http://www.w3.org/2003/11/swrl#Imp">
+        <rdfs:comment xml:lang="en">Used in SWRL rule definitions to support logical inference</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/2003/11/swrl#IndividualPropertyAtom -->
+
+
+    <owl:Class rdf:about="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom">
+        <rdfs:comment xml:lang="en">Used in SWRL rule definitions to support logical inference</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/2003/11/swrl#Variable -->
+
+
+    <owl:Class rdf:about="http://www.w3.org/2003/11/swrl#Variable">
+        <rdfs:comment xml:lang="en">Used in SWRL rule definitions to support logical inference</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://dbpedia.org/resource/Flamenco -->
+
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Flamenco">
+        <owl:sameAs rdf:resource="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Flamenco"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Flamenco -->
+
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Flamenco"/>
+    
+
+
+    <!-- http://dbpedia.org/resource/Seville -->
+
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Seville">
+        <owl:sameAs rdf:resource="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Seville"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Seville -->
+
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Seville"/>
+    
+
+
+    <!-- http://dbpedia.org/resource/Seville_Cathedral -->
+
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Seville_Cathedral">
+        <owl:sameAs rdf:resource="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Cathedral"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Cathedral -->
+
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Cathedral"/>
+    
+
+
+    <!-- http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Autobús_City_Zaragoza -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Autobús_City_Zaragoza">
+        <rdf:type rdf:resource="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#BusService"/>
+        <rdfs:comment>Instance of BusService.</rdfs:comment>
+        <rdfs:label>Autobús - City Zaragoza</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Barcelona -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Barcelona">
+        <rdf:type rdf:resource="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#City"/>
+        <rdfs:comment>Instance of City.</rdfs:comment>
+        <rdfs:label>Barcelona</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Carnaval_Cádiz -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Carnaval_Cádiz">
+        <rdf:type rdf:resource="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#SportsEvent"/>
+        <rdfs:comment>Instance of SportsEvent.</rdfs:comment>
+        <rdfs:label>Carnaval Cádiz</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Carnaval_Sevilla -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Carnaval_Sevilla">
+        <rdf:type rdf:resource="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Event"/>
+        <rdfs:comment>Instance of Event.</rdfs:comment>
+        <rdfs:label>Carnaval Sevilla</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Castillo_Cádiz -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Castillo_Cádiz">
+        <rdf:type rdf:resource="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Attraction"/>
+        <rdfs:comment>Instance of Attraction.</rdfs:comment>
+        <rdfs:label>Castillo Cádiz</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Castillo_Sevilla -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Castillo_Sevilla">
+        <rdf:type rdf:resource="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Monument"/>
+        <rdfs:comment>Instance of Monument.</rdfs:comment>
+        <rdfs:label>Castillo Sevilla</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Castillo_Zaragoza -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Castillo_Zaragoza">
+        <rdf:type rdf:resource="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Museum"/>
+        <rdfs:comment>Instance of Museum.</rdfs:comment>
+        <rdfs:label>Castillo Zaragoza</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Cathedral -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Cathedral"/>
+    
+
+
+    <!-- http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Congreso_Bilbao -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Congreso_Bilbao">
+        <rdf:type rdf:resource="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#CulturalEvent"/>
+        <rdfs:comment>Instance of CulturalEvent.</rdfs:comment>
+        <rdfs:label>Congreso Bilbao</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Congreso_Cádiz -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Congreso_Cádiz">
+        <rdf:type rdf:resource="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#SportsEvent"/>
+        <rdfs:comment>Instance of SportsEvent.</rdfs:comment>
+        <rdfs:label>Congreso Cádiz</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Feria_Toledo -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Feria_Toledo">
+        <rdf:type rdf:resource="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#SportsEvent"/>
+        <rdfs:comment>Instance of SportsEvent.</rdfs:comment>
+        <rdfs:label>Feria Toledo</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Flamenco -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Flamenco"/>
+    
+
+
+    <!-- http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Hotel_Palace_Zaragoza -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Hotel_Palace_Zaragoza">
+        <rdf:type rdf:resource="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Hotel"/>
+        <rdfs:comment>Instance of Hotel.</rdfs:comment>
+        <rdfs:label>Hotel Palace Zaragoza</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Hotel_Royal_Bilbao -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Hotel_Royal_Bilbao">
+        <rdf:type rdf:resource="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Hotel"/>
+        <rdfs:comment>Instance of Hotel.</rdfs:comment>
+        <rdfs:label>Hotel Royal Bilbao</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Hotel_Royal_Málaga -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Hotel_Royal_Málaga">
+        <rdf:type rdf:resource="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Hotel"/>
+        <rdfs:comment>Instance of Hotel.</rdfs:comment>
+        <rdfs:label>Hotel Royal Málaga</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Hotel_Royal_Pamplona -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Hotel_Royal_Pamplona">
+        <rdf:type rdf:resource="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Hotel"/>
+        <rdfs:comment>Instance of Hotel.</rdfs:comment>
+        <rdfs:label>Hotel Royal Pamplona</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Hotel_Vista_Sevilla -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Hotel_Vista_Sevilla">
+        <rdf:type rdf:resource="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Hotel"/>
+        <rdfs:comment>Instance of Hotel.</rdfs:comment>
+        <rdfs:label>Hotel Vista Sevilla</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Madrid -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Madrid">
+        <rdf:type rdf:resource="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#City"/>
+        <rdfs:comment>Instance of City.</rdfs:comment>
+        <rdfs:label>Madrid</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Metro_Movi_Cádiz -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Metro_Movi_Cádiz">
+        <rdf:type rdf:resource="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#MetroService"/>
+        <rdfs:comment>Instance of MetroService.</rdfs:comment>
+        <rdfs:label>Metro - Movi Cádiz</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Metro_Urban_Madrid -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Metro_Urban_Madrid">
+        <rdf:type rdf:resource="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#MetroService"/>
+        <rdfs:comment>Instance of MetroService.</rdfs:comment>
+        <rdfs:label>Metro - Urban Madrid</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Museo_Madrid -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Museo_Madrid">
+        <rdf:type rdf:resource="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Museum"/>
+        <rdfs:comment>Instance of Museum.</rdfs:comment>
+        <rdfs:label>Museo Madrid</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Restaurante_Delicia_Málaga -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Restaurante_Delicia_Málaga">
+        <rdf:type rdf:resource="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Restaurant"/>
+        <rdfs:comment>Instance of Restaurant.</rdfs:comment>
+        <rdfs:label>Restaurante Delicia Málaga</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Restaurante_Delicia_Pamplona -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Restaurante_Delicia_Pamplona">
+        <rdf:type rdf:resource="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Restaurant"/>
+        <rdfs:comment>Instance of Restaurant.</rdfs:comment>
+        <rdfs:label>Restaurante Delicia Pamplona</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Restaurante_Fusión_Valencia -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Restaurante_Fusión_Valencia">
+        <rdf:type rdf:resource="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Restaurant"/>
+        <rdfs:comment>Instance of Restaurant.</rdfs:comment>
+        <rdfs:label>Restaurante Fusión Valencia</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Restaurante_Gourmet_Madrid -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Restaurante_Gourmet_Madrid">
+        <rdf:type rdf:resource="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Restaurant"/>
+        <rdfs:comment>Instance of Restaurant.</rdfs:comment>
+        <rdfs:label>Restaurante Gourmet Madrid</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Restaurante_Tradición_Toledo -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Restaurante_Tradición_Toledo">
+        <rdf:type rdf:resource="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Restaurant"/>
+        <rdfs:comment>Instance of Restaurant.</rdfs:comment>
+        <rdfs:label>Restaurante Tradición Toledo</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Seville -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Seville"/>
+    
+
+
+    <!-- http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Taxi_Trans_Bilbao -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Taxi_Trans_Bilbao">
+        <rdf:type rdf:resource="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#TaxiService"/>
+        <rdfs:comment>Instance of TaxiService.</rdfs:comment>
+        <rdfs:label>Taxi - Trans Bilbao</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Toledo -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Toledo">
+        <rdf:type rdf:resource="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#City"/>
+        <rdfs:comment>Instance of City.</rdfs:comment>
+        <rdfs:label>Toledo</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Tranvía_Trans_Toledo -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Tranvía_Trans_Toledo">
+        <rdf:type rdf:resource="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#TransportService"/>
+        <rdfs:comment>Instance of TransportService.</rdfs:comment>
+        <rdfs:label>Tranvía - Trans Toledo</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Valencia -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Valencia">
+        <rdf:type rdf:resource="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#City"/>
+        <rdfs:comment>Instance of City.</rdfs:comment>
+        <rdfs:label>Valencia</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Zaragoza -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Zaragoza">
+        <rdf:type rdf:resource="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#City"/>
+        <rdfs:comment>Instance of City.</rdfs:comment>
+        <rdfs:label>Zaragoza</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Rules
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    <rdf:Description rdf:about="http://www.w3.org/2002/07/a">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.w3.org/2002/07/r">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.w3.org/2002/07/c">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.w3.org/2002/07/h">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.w3.org/2002/07/e">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.w3.org/2002/07/m">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.w3.org/2002/07/t">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.w3.org/2002/07/d">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.w3.org/2002/07/p">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.w3.org/2002/07/rr">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.w3.org/2002/07/s">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>HotelInCityRule</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#City"/>
+                        <swrl:argument1 rdf:resource="http://www.w3.org/2002/07/c"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#isLocatedIn"/>
+                                <swrl:argument1 rdf:resource="http://www.w3.org/2002/07/h"/>
+                                <swrl:argument2 rdf:resource="http://www.w3.org/2002/07/c"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Hotel"/>
+                                        <swrl:argument1 rdf:resource="http://www.w3.org/2002/07/h"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Hotel"/>
+                        <swrl:argument1 rdf:resource="http://www.w3.org/2002/07/h"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>SportsEventRule</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Event"/>
+                        <swrl:argument1 rdf:resource="http://www.w3.org/2002/07/e"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#hasEventType"/>
+                                <swrl:argument1 rdf:resource="http://www.w3.org/2002/07/e"/>
+                                <swrl:argument2>Deportivo</swrl:argument2>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#SportsEvent"/>
+                        <swrl:argument1 rdf:resource="http://www.w3.org/2002/07/e"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>NotableAttractionRule</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Attraction"/>
+                        <swrl:argument1 rdf:resource="http://www.w3.org/2002/07/a"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#BuiltinAtom"/>
+                                <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#greaterThan"/>
+                                <swrl:arguments>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                        <rdf:first rdf:resource="http://www.w3.org/2002/07/r"/>
+                                        <rdf:rest>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">4.5</rdf:first>
+                                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                            </rdf:Description>
+                                        </rdf:rest>
+                                    </rdf:Description>
+                                </swrl:arguments>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#hasRating"/>
+                                        <swrl:argument1 rdf:resource="http://www.w3.org/2002/07/a"/>
+                                        <swrl:argument2 rdf:resource="http://www.w3.org/2002/07/r"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Attraction"/>
+                        <swrl:argument1 rdf:resource="http://www.w3.org/2002/07/a"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>SpanishCuisineRule</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Restaurant"/>
+                        <swrl:argument1 rdf:resource="http://www.w3.org/2002/07/r"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#hasCuisine"/>
+                                <swrl:argument1 rdf:resource="http://www.w3.org/2002/07/r"/>
+                                <swrl:argument2>Española</swrl:argument2>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Restaurant"/>
+                        <swrl:argument1 rdf:resource="http://www.w3.org/2002/07/r"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>HighRatedMuseumRule</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#hasRating"/>
+                        <swrl:argument1 rdf:resource="http://www.w3.org/2002/07/m"/>
+                        <swrl:argument2 rdf:resource="http://www.w3.org/2002/07/r"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                <swrl:classPredicate rdf:resource="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Museum"/>
+                                <swrl:argument1 rdf:resource="http://www.w3.org/2002/07/m"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#BuiltinAtom"/>
+                                        <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#greaterThan"/>
+                                        <swrl:arguments>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                <rdf:first rdf:resource="http://www.w3.org/2002/07/r"/>
+                                                <rdf:rest>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                        <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">4.0</rdf:first>
+                                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                                    </rdf:Description>
+                                                </rdf:rest>
+                                            </rdf:Description>
+                                        </swrl:arguments>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Museum"/>
+                        <swrl:argument1 rdf:resource="http://www.w3.org/2002/07/m"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>UrbanTransportRule</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#hasTransportType"/>
+                        <swrl:argument1 rdf:resource="http://www.w3.org/2002/07/t"/>
+                        <swrl:argument2>Metro</swrl:argument2>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                <swrl:classPredicate rdf:resource="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#TransportService"/>
+                                <swrl:argument1 rdf:resource="http://www.w3.org/2002/07/t"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#TransportService"/>
+                        <swrl:argument1 rdf:resource="http://www.w3.org/2002/07/t"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>CulturalEventInFutureRule</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#BuiltinAtom"/>
+                        <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#greaterThan"/>
+                        <swrl:arguments>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                <rdf:first rdf:resource="http://www.w3.org/2002/07/d"/>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                        <rdf:first>2025-04-01</rdf:first>
+                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </swrl:arguments>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                <swrl:classPredicate rdf:resource="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#CulturalEvent"/>
+                                <swrl:argument1 rdf:resource="http://www.w3.org/2002/07/e"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#hasDate"/>
+                                        <swrl:argument1 rdf:resource="http://www.w3.org/2002/07/e"/>
+                                        <swrl:argument2 rdf:resource="http://www.w3.org/2002/07/d"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#CulturalEvent"/>
+                        <swrl:argument1 rdf:resource="http://www.w3.org/2002/07/e"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>CheapRestaurantRule</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#BuiltinAtom"/>
+                        <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#lessThan"/>
+                        <swrl:arguments>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                <rdf:first rdf:resource="http://www.w3.org/2002/07/p"/>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                        <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">20.0</rdf:first>
+                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </swrl:arguments>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#hasPrice"/>
+                                <swrl:argument1 rdf:resource="http://www.w3.org/2002/07/r"/>
+                                <swrl:argument2 rdf:resource="http://www.w3.org/2002/07/p"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Restaurant"/>
+                                        <swrl:argument1 rdf:resource="http://www.w3.org/2002/07/r"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Restaurant"/>
+                        <swrl:argument1 rdf:resource="http://www.w3.org/2002/07/r"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>RatedRestaurantNearAttraction</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#BuiltinAtom"/>
+                        <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#greaterThan"/>
+                        <swrl:arguments>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                <rdf:first rdf:resource="http://www.w3.org/2002/07/rr"/>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                        <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">4.0</rdf:first>
+                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </swrl:arguments>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#hasRating"/>
+                                <swrl:argument1 rdf:resource="http://www.w3.org/2002/07/r"/>
+                                <swrl:argument2 rdf:resource="http://www.w3.org/2002/07/rr"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Attraction"/>
+                                        <swrl:argument1 rdf:resource="http://www.w3.org/2002/07/a"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                        <rdf:first>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#isLocatedIn"/>
+                                                <swrl:argument1 rdf:resource="http://www.w3.org/2002/07/r"/>
+                                                <swrl:argument2 rdf:resource="http://www.w3.org/2002/07/c"/>
+                                            </rdf:Description>
+                                        </rdf:first>
+                                        <rdf:rest>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                <rdf:first>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Restaurant"/>
+                                                        <swrl:argument1 rdf:resource="http://www.w3.org/2002/07/r"/>
+                                                    </rdf:Description>
+                                                </rdf:first>
+                                                <rdf:rest>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                        <rdf:first>
+                                                            <rdf:Description>
+                                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#isLocatedIn"/>
+                                                                <swrl:argument1 rdf:resource="http://www.w3.org/2002/07/a"/>
+                                                                <swrl:argument2 rdf:resource="http://www.w3.org/2002/07/c"/>
+                                                            </rdf:Description>
+                                                        </rdf:first>
+                                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                                    </rdf:Description>
+                                                </rdf:rest>
+                                            </rdf:Description>
+                                        </rdf:rest>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Restaurant"/>
+                        <swrl:argument1 rdf:resource="http://www.w3.org/2002/07/r"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>HighScoreHotelRule</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#BuiltinAtom"/>
+                        <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#greaterThan"/>
+                        <swrl:arguments>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                <rdf:first rdf:resource="http://www.w3.org/2002/07/s"/>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                        <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</rdf:first>
+                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </swrl:arguments>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#hasRating"/>
+                                <swrl:argument1 rdf:resource="http://www.w3.org/2002/07/h"/>
+                                <swrl:argument2 rdf:resource="http://www.w3.org/2002/07/r"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Hotel"/>
+                                        <swrl:argument1 rdf:resource="http://www.w3.org/2002/07/h"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                        <rdf:first>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#BuiltinAtom"/>
+                                                <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#greaterThan"/>
+                                                <swrl:arguments>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                        <rdf:first rdf:resource="http://www.w3.org/2002/07/r"/>
+                                                        <rdf:rest>
+                                                            <rdf:Description>
+                                                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                                <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">4.5</rdf:first>
+                                                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                                            </rdf:Description>
+                                                        </rdf:rest>
+                                                    </rdf:Description>
+                                                </swrl:arguments>
+                                            </rdf:Description>
+                                        </rdf:first>
+                                        <rdf:rest>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                <rdf:first>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                                                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#hasStars"/>
+                                                        <swrl:argument1 rdf:resource="http://www.w3.org/2002/07/h"/>
+                                                        <swrl:argument2 rdf:resource="http://www.w3.org/2002/07/s"/>
+                                                    </rdf:Description>
+                                                </rdf:first>
+                                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                            </rdf:Description>
+                                        </rdf:rest>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/michael/ontologies/2025/3/ej2-3#Hotel"/>
+                        <swrl:argument1 rdf:resource="http://www.w3.org/2002/07/h"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/ -->
+
+
